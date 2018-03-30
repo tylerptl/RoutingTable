@@ -5,7 +5,7 @@ import es.usc.citius.hipster.graph.GraphSearchProblem;
 import es.usc.citius.hipster.graph.HipsterDirectedGraph;
 import es.usc.citius.hipster.model.problem.SearchProblem;
 
-public class Driver {
+public class LinkStateController {
 
     public static void main(String... args){
         NetworkUtils net = new NetworkUtils("nodes.txt");
@@ -48,7 +48,7 @@ public class Driver {
                     continue;
                 }
                 System.out.println("\t " + names[i] + " (" + Hipster.createDijkstra(p).search(names[i]).getOptimalPaths()+", " +
-                        Hipster.createDijkstra(p).search(names[i]) );
+                        Hipster.createDijkstra(p).search(names[i]).getGoalNodes() );
             }
         }
         //System.out.println(Hipster.createDijkstra(p).search("z").getGoalNode().pathSize());
